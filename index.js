@@ -29,7 +29,7 @@ request('https://transwide.wktransportservices.com', function (error, response, 
 			res.on('end', function () {
 				console.log('GET IAM login body:', result); // Print the HTML for the Google homepage.
 
-				https.post('https://idp.wktransportservices.com/nidp/app/login?id=124&sid=0&option=credential&sid=0', { SAMLRequest: saml /*Ecom_User_ID: 'ABADMPROD', Ecom_Password: 'T0talwide' */}, function(res){
+				https.post('https://idp.wktransportservices.com/nidp/app/login?id=124&sid=0&option=credential&sid=0', { SAMLRequest: saml /*Ecom_User_ID: 'ABADMPROD', Ecom_Password: '' */}, function(res){
 					var result = '';
 					res.on('data', function (chunk) {
 						result += chunk;
@@ -37,7 +37,7 @@ request('https://transwide.wktransportservices.com', function (error, response, 
 					res.on('end', function () {
 						
 						//ok now we POST
-						https.post('https://idp.wktransportservices.com/nidp/app/login?sid=0', { Ecom_User_ID: 'ABADMPROD', Ecom_Password: 'T0talwide' }, function(res){
+						https.post('https://idp.wktransportservices.com/nidp/app/login?sid=0', { Ecom_User_ID: 'ABADMPROD', Ecom_Password: '' }, function(res){
 							var result = '';
 								res.on('data', function (chunk) {
 									result += chunk;
